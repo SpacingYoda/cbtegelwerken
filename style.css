@@ -1,0 +1,165 @@
+/* styles.css */
+body {
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    background: url('img/wand/IMG-20241209-WA0109.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+header {
+    background-color: #f7f1ed;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.logo img { 
+    height: 70px;
+    border-radius: 5%;
+    padding: 20px; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centrer de rest van de knoppen */
+    position: relative; /* Hiermee kunnen we de login-knop positioneren */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul .login-button {
+    position: absolute;
+    right: 0; /* Zorgt ervoor dat de inlogknop aan de rechterkant staat */
+    margin-right: 20px; /* Optioneel: beetje ruimte toevoegen aan de rechterkant */
+}
+
+nav ul li a {
+    color: #AA0456;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #78063f;
+    border-radius: 5px;
+}
+
+.diensten {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin: 20px 0;
+    padding: 5%;
+    background-color: #f7f1ed;
+    z-index: 1;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.dienst {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: #f7f1ed;
+    text-align: center;
+    height: 200px; /* Pas de hoogte aan naar wens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Zorg ervoor dat de overlay binnen de borders blijft */
+}
+
+.dienst::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* De kleur en de dekking van de overlay */
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.dienst:hover::before {
+    background: rgba(0, 0, 0, 0); /* Verwijder de filter bij hover */
+}
+
+.dienst h2, .dienst p {
+    position: relative;
+    z-index: 2; /* Zorg ervoor dat de tekst boven de overlay verschijnt */
+    margin: 0;
+}
+
+.dienst h2 {
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dienst p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .diensten {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.contact-block {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f7f1ed;
+}
+
+.text {
+    flex: 1;
+    padding: 20px;
+}
+
+.image1 {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Pas de hoogte aan naar wens */
+    border-radius: 10px;
+}
+.image2 {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Pas de hoogte aan naar wens */
+    border-radius: 10px;
+}
+.image3 {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Pas de hoogte aan naar wens */
+    border-radius: 10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f7f1ed;
+    color: #AA0456;
+    position: relative; /* Verander naar relative */
+    width: 100%;
+    bottom: 0;
+}
+
