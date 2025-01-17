@@ -48,17 +48,29 @@ nav ul li a {
 nav ul li a:hover {
     color: #78063f;
     border-radius: 5px;
-}
+}   
+
 h2 {
     font-size: 36px; 
     font-weight: bold;
     color: #78063f; 
 }
+
 h3 {
     font-size: 26px; 
     padding: 0%;
     color: #f7f1ed; 
 }
+.title {
+    text-align: center;
+    background-color: #f7f1ed;
+    color: #78063f;
+    height: 80px;
+    margin-top: 30px;
+    font-size:xx-large;
+    font-weight: 400;
+}
+
 
 .diensten {
     display: grid;
@@ -201,25 +213,22 @@ h3 {
     top: 30%;
 }
 /* carousel */
-
 /* styles.css */
 .carousel-container {
     position: relative;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0);
+    background-color: #f7f1ed;
 }
 
 .carousel-slide {
-    width: 100%; /* Adjust as necessary */
-    max-width: 300px; /* Set a max width to contain the carousel */
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide img {
-    width: 100%; /* Make sure each image takes up the full width of the container */
+    width: 100%; /* Ensure each image takes up the full width of the container */
     flex: 0 0 auto; /* Prevent images from shrinking */
     object-fit: cover; /* Ensures the image covers the container without being stretched */
 }
@@ -247,6 +256,19 @@ h3 {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .carousel-slide {
+        max-width: 100%;
+    }
+    
+    .prev, .next {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
 
 footer {
     text-align: center;
