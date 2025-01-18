@@ -2,8 +2,9 @@
 session_start();  // Sessie starten
 
 // Controleer of de admin is ingelogd
-if ($_SESSION['loggedin'] == true) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   header("Location: admin_dashboard.php");  // Als ingelogd, doorverwijzen naar dashboard
+  exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,11 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($username == 'admin' && $password == '0000') {  // Vervang door je eigen admin gebruikersnaam en wachtwoord
     $_SESSION['loggedin'] = true;
     header("Location: admin_dashboard.php");  // Doorverwijzen naar dashboard
+    exit;
   } else {
     $error = "Ongeldige inloggegevens";
   }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>

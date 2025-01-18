@@ -9,12 +9,10 @@
   <input type="email" id="email" name="email" required><br><br>
 
   <label for="phone">Telefoonnummer:</label>
-  <input type="text" id="phone" name="phone" required><br><br>
+  <input type="tel" id="phone" name="phone" required><br><br>
 
   <label for="message">Bericht:</label>
   <textarea id="message" name="message" required></textarea><br><br>
 
   <input type="submit" value="Verstuur">
 </form>
-
-<?php include('footer.php'); ?>
