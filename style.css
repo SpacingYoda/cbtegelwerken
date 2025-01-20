@@ -212,63 +212,28 @@ h3 {
     right: 30%; /* Adjust the right position to create the overlap */
     top: 30%;
 }
-/* carousel */
-/* styles.css */
-.carousel-container {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #f7f1ed;
+
+.text {
+    padding-left: 5%;
 }
 
-.carousel-slide {
+.contact-block {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
 }
 
-.carousel-slide img {
-    width: 100%; /* Ensure each image takes up the full width of the container */
-    flex: 0 0 auto; /* Prevent images from shrinking */
-    object-fit: cover; /* Ensures the image covers the container without being stretched */
+.content-block {
+    display: flex;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 1s ease;
-    user-select: none;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    .carousel-slide {
-        max-width: 100%;
-    }
+.image {
     
-    .prev, .next {
-        font-size: 14px;
-        padding: 12px;
-    }
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
 }
-
 
 footer {
     text-align: center;
