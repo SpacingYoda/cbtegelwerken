@@ -11,80 +11,102 @@
     <?php include('header.php'); ?>
 
     <section class="carousel-section">
-    <h2>Bekijk ons werk</h2>
-    <div class="carousel-container">
-        <button id="prev" class="carousel-button">←</button>
+    <h2>Badkamer Tegelwerk</h2>
+    <div class="carousel-container" id="carousel-1">
+        <button class="carousel-button" id="prev-1">←</button>
         <div class="carousel">
             <img src="img/badkamer/IMG-20241209-WA0078.jpg" alt="Badkamer tegelwerk 1">
             <img src="img/badkamer/IMG-20241209-WA0128.jpg" alt="Badkamer tegelwerk 2">
-            <img src="img/keuken/IMG-20241209-WA0150.jpg" alt="Keuken tegelwerk">
             <img src="img/badkamer/IMG-20241209-WA0100.jpg" alt="Badkamer tegelwerk 3">
-            <img src="img/keuken/IMG-20241209-WA0180.jpg" alt="Keuken tegelwerk 2">
         </div>
-        <button id="next" class="carousel-button">→</button>
+        <button class="carousel-button" id="next-1">→</button>
+    </div>
+</section>
+
+<section class="carousel-section">
+    <h2>Keuken Tegelwerk</h2>
+    <div class="carousel-container" id="carousel-2">
+        <button class="carousel-button" id="prev-2">←</button>
+        <div class="carousel">
+            <img src="img/keuken/IMG-20241209-WA0150.jpg" alt="Keuken tegelwerk 1">
+            <img src="img/keuken/IMG-20241209-WA0180.jpg" alt="Keuken tegelwerk 2">
+            <img src="img/keuken/IMG-20241209-WA0130.jpg" alt="Keuken tegelwerk 3">
+        </div>
+        <button class="carousel-button" id="next-2">→</button>
+    </div>
+</section>
+
+<section class="carousel-section">
+    <h2>Overige Projecten</h2>
+    <div class="carousel-container" id="carousel-3">
+        <button class="carousel-button" id="prev-3">←</button>
+        <div class="carousel">
+            <img src="img/overig/IMG-20241209-WA0200.jpg" alt="Project 1">
+            <img src="img/overig/IMG-20241209-WA0220.jpg" alt="Project 2">
+            <img src="img/overig/IMG-20241209-WA0240.jpg" alt="Project 3">
+        </div>
+        <button class="carousel-button" id="next-3">→</button>
     </div>
 </section>
 <script>
-const carousel = document.querySelector('.carousel');
-const images = document.querySelectorAll('.carousel img');
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
+// Functie om een enkele carrousel te initialiseren
+function initializeCarousel(carouselContainerId, prevButtonId, nextButtonId) {
+    const carouselContainer = document.getElementById(carouselContainerId);
+    const carousel = carouselContainer.querySelector('.carousel');
+    const images = carousel.querySelectorAll('img');
+    const prevButton = document.getElementById(prevButtonId);
+    const nextButton = document.getElementById(nextButtonId);
 
-const imageWidth = images[0].clientWidth; // Get the width of one image
-let currentIndex = 0; // Track the current image index
+    const imageWidth = images[0].clientWidth;
+    let currentIndex = 0;
 
-// Clone images for seamless looping
-images.forEach((img) => {
-    const clone = img.cloneNode(true);
-    carousel.appendChild(clone);
-});
+    // Clone images for looping
+    images.forEach((img) => {
+        const clone = img.cloneNode(true);
+        carousel.appendChild(clone);
+    });
 
-// Function to scroll the carousel
-function scrollCarousel() {
-    currentIndex++;
-    carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    carousel.style.transition = 'transform 0.5s ease-in-out';
+    // Function to scroll the carousel
+    function scrollCarousel(direction) {
+        if (direction === 'next') {
+            currentIndex++;
+        } else {
+            currentIndex--;
+        }
 
-    // Reset to the start if we reach the end
-    if (currentIndex >= images.length) {
-        setTimeout(() => {
-            carousel.style.transition = 'none'; // Disable transition
-            currentIndex = 0; // Reset to the start
-            carousel.style.transform = `translateX(0px)`;
-        }, 500); // Match the transition duration
-    }
-}
-
-// Function to handle previous and next button clicks
-function handleButtonClick(direction) {
-    // Disable transition temporarily for seamless looping
-    if (direction === 'prev' && currentIndex === 0) {
-        carousel.style.transition = 'none';
-        currentIndex = images.length; // Jump to the cloned last image
         carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    }
-
-    if (direction === 'next' && currentIndex === images.length - 1) {
-        carousel.style.transition = 'none';
-        currentIndex = -1; // Jump to the cloned first image
-        carousel.style.transform = `translateX(0px)`;
-    }
-
-    setTimeout(() => {
-        // Update index and scroll with transition
         carousel.style.transition = 'transform 0.5s ease-in-out';
-        currentIndex += direction === 'prev' ? -1 : 1;
-        carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    }, 20); // Small delay to allow transition
+
+        // Reset to start or end if necessary
+        if (currentIndex >= images.length) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';
+                currentIndex = 0;
+                carousel.style.transform = `translateX(0px)`;
+            }, 500);
+        }
+
+        if (currentIndex < 0) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';
+                currentIndex = images.length - 1;
+                carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+            }, 500);
+        }
+    }
+
+    // Event listeners for buttons
+    prevButton.addEventListener('click', () => scrollCarousel('prev'));
+    nextButton.addEventListener('click', () => scrollCarousel('next'));
+
+    // Automatic scrolling
+    setInterval(() => scrollCarousel('next'), 3000); // Adjust the interval as needed
 }
 
-// Button event listeners
-prevButton.addEventListener('click', () => handleButtonClick('prev'));
-nextButton.addEventListener('click', () => handleButtonClick('next'));
-
-// Automatic scrolling
-setInterval(scrollCarousel, 3000); // Scroll every 3 seconds
-
+// Initialiseer meerdere carrousels
+initializeCarousel('carousel-1', 'prev-1', 'next-1');
+initializeCarousel('carousel-2', 'prev-2', 'next-2');
+initializeCarousel('carousel-3', 'prev-3', 'next-3');
 </script>
     <main>
         <section class="contact-block">

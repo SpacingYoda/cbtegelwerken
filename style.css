@@ -238,6 +238,7 @@ h3 {
     position: relative;
     overflow: hidden;
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: #f7f1ed;
     box-sizing: border-box;
@@ -260,7 +261,7 @@ h3 {
 }
 
 /* Buttons */
-.carousel-button {
+.carousel-container .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -273,14 +274,15 @@ h3 {
     font-size: 18px;
 }
 
-#prev {
+.carousel-container #prev {
     left: 10px;
 }
 
-#next {
+.carousel-container #next {
     right: 10px;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .carousel img {
         max-height: 200px;
