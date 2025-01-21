@@ -1,5 +1,6 @@
 <?php include('header.php'); ?>
 
+<body>
 <h1>Contact Opnemen</h1>
 <form action="contact_form.php" method="post">
   <label for="name">Naam:</label>
@@ -16,3 +17,4 @@
 
   <input type="submit" value="Verstuur">
 </form>
+</body>

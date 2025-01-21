@@ -14,9 +14,6 @@ if ($conn->connect_error) {
 echo "";
 
 ?>
- <?php include('header.php'); ?>
-
-<?php include('footer.php'); ?> 
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -28,18 +25,9 @@ echo "";
     
 </head>
 <body>
-    <header>
-    <div class="logo"> <img src="img/logo.jpg" alt="Logo">
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="portfolio.php">Portfolio</a></li>
-                <li><a href="diensten.php">Diensten</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li class="login-button"><a href="admin_login.php">Inloggen</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    <?php include('header.php'); ?>
+    
     <main>
     <section class="diensten">
         <div class="dienst" style="background-image: url('img/vloer/IMG-20241209-WA0166.jpg');">
@@ -75,9 +63,7 @@ echo "";
 
 </main>
 
-    <footer>
-        <p>© CB Tegelwerken, 2025</p>
-    </footer>
-</body>
+<?php include('footer.php'); ?> 
+
 </html>
 

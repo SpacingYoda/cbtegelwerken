@@ -7,20 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo"> 
-            <img src="img/logo.jpg" alt="Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="portfolio.php">Portfolio</a></li>
-                <li><a href="diensten.php">Diensten</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li class="login-button"><a href="admin_login.php">Inloggen</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <?php include('header.php'); ?>
+
     <section class="carousel-section">
     <h2>Bekijk ons werk</h2>
     <div class="carousel-container">

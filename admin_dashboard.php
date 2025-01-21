@@ -32,6 +32,7 @@ $result = $conn->query($sql);
   <title>Admin Dashboard</title>
 </head>
 <body>
+  <?php include ('header.php'); ?>
   <h1>Welkom, Admin</h1>
   <h2>Contactberichten</h2>
   <table border="1">
