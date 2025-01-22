@@ -71,7 +71,6 @@ h3 {
     font-weight: 400;
 }
 
-
 .diensten {
     display: grid;
     grid-template-columns: 1fr;
@@ -97,6 +96,11 @@ h3 {
     align-items: center;
     position: relative;
     overflow: hidden; /* Zorg ervoor dat de overlay binnen de borders blijft */
+}
+.dienst-link {
+    display: block; /* Ensures the entire div is clickable */
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps the text color consistent */
 }
 
 .dienst::before {
@@ -229,18 +233,21 @@ h3 {
 }
 
 .image {
-    
     margin: 10px;
     background-size: cover;
     background-position: center;
 }
+.carousel-section {
+    padding-top: 1%;
+    background-color: #f7f1ed;
+    text-align: center;
+}
+
 .carousel-container {
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-    background-color: #f7f1ed;
     box-sizing: border-box;
 }
 
