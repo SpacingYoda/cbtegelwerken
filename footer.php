@@ -1,4 +1,4 @@
 <footer>
-        <p>© CB Tegelwerken, 2025</p>
+        <p>© CBTegelwerken, 2025</p>
     </footer>
 </body>
