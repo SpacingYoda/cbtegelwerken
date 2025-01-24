@@ -33,7 +33,7 @@
 </section>
 
 <section class="carousel-section" id="vloerportfolio">
-    <h2>Muurbekleding</h2>
+    <h2>Vloerbekleding</h2>
     <div class="carousel-container">
         <button class="carousel-button" id="prev">←</button>
         <div class="carousel">
@@ -43,87 +43,104 @@
             <img src="img/vloer/IMG-20241209-WA0081.jpg" alt="vloer tegelwerk 4">
             <img src="img/vloer/IMG-20241209-WA0116.jpg" alt="vloer tegelwerk 5">
             <img src="img/vloer/IMG-20241209-WA0095.jpg" alt="vloer tegelwerk 6">
+            <img src="img/vloer/IMG-20241209-WA0172.jpg" alt="vloer tegelwerk 7">
+            <img src="img/vloer/IMG-20241209-WA0169.jpg" alt="vloer tegelwerk 8">
         </div>
         <button class="carousel-button" id="next">→</button>
     </div>
 </section>
+
 <section class="carousel-section" id="keukenportfolio">
-    <h2>Keuken&Wand Tegelwerk</h2>
+    <h2>Keuken & Wand Tegelwerk</h2>
     <div class="carousel-container">
         <button class="carousel-button" id="prev">←</button>
         <div class="carousel">
             <img src="img/keuken/IMG-20241209-WA0110.jpg" alt="Keuken en muur tegelwerk 1">
-            <img src="img/wand/IMG-20241209-WA0118.jpg" alt="Keuken en muur tegelwerk 1">
-            <img src="img/wand/IMG-20241209-WA0131.jpg" alt="Keuken en muur tegelwerk 1">
-            <img src="img/wand/IMG-20241209-WA0109.jpg" alt="Keuken en muur tegelwerk 1">
-            <img src="img/keuken/IMG-20241209-WA0150.jpg" alt="Keuken en muur tegelwerk 1">
-            <img src="img/wand/IMG-20241209-WA0148.jpg" alt="Keuken en muur tegelwerk 1">
-            <img src="img/wand/IMG-20241206-WA0004.jpg" alt="Keuken en muur tegelwerk 1">
+            <img src="img/wand/IMG-20241209-WA0118.jpg" alt="Keuken en muur tegelwerk 2">
+            <img src="img/wand/IMG-20241209-WA0131.jpg" alt="Keuken en muur tegelwerk 3">
+            <img src="img/wand/IMG-20241209-WA0109.jpg" alt="Keuken en muur tegelwerk 4">
+            <img src="img/keuken/IMG-20241209-WA0150.jpg" alt="Keuken en muur tegelwerk 5">
+            <img src="img/wand/IMG-20241209-WA0148.jpg" alt="Keuken en muur tegelwerk 6">
+            <img src="img/wand/IMG-20241206-WA0004.jpg" alt="Keuken en muur tegelwerk 7">
         </div>
         <button class="carousel-button" id="next">→</button>
     </div>
 </section>
 <script>
+
 function initializeCarousel(carouselContainer) {
     const carousel = carouselContainer.querySelector('.carousel');
     const prevButton = carouselContainer.querySelector('#prev');
     const nextButton = carouselContainer.querySelector('#next');
     const images = carousel.querySelectorAll('img');
 
-    let currentIndex = 0;
+    let currentIndex = 0; // Tracks the currently visible image
+    let imageWidth = images[0].clientWidth;
 
-    // Klonen van afbeeldingen voor een oneindig scroll-effect
-    const cloneFirst = images[0].cloneNode(true);
-    const cloneLast = images[images.length - 1].cloneNode(true);
+    // Clone the first and last images
+    const firstClone = images[0].cloneNode(true);
+    const lastClone = images[images.length - 1].cloneNode(true);
 
-    carousel.appendChild(cloneFirst); // Voeg de eerste afbeelding toe aan het einde
-    carousel.insertBefore(cloneLast, images[0]); // Voeg de laatste afbeelding toe aan het begin
+    // Append clones
+    carousel.appendChild(firstClone); // Add first image clone to the end
+    carousel.insertBefore(lastClone, images[0]); // Add last image clone to the start
 
-    const totalImages = carousel.querySelectorAll('img'); // Update de totale afbeeldingen
-    const imageWidth = images[0].clientWidth;
+    const totalImages = carousel.querySelectorAll('img'); // Update image list with clones
+    const totalCount = totalImages.length; // Includes clones
 
-    // Stel de beginpositie in (na de kloning)
+    // Set initial transform to account for the starting clone
     carousel.style.transform = `translateX(${-imageWidth}px)`;
 
-    // Scroll naar de volgende afbeelding
+    function updateImageWidth() {
+        imageWidth = images[0].clientWidth;
+        carousel.style.transition = 'none';
+        carousel.style.transform = `translateX(${-imageWidth * (currentIndex + 1)}px)`;
+    }
+
+    // Scroll to the next image
     function scrollNext() {
+        if (currentIndex >= images.length) return; // Prevent over-scrolling
         currentIndex++;
         carousel.style.transition = 'transform 0.5s ease-in-out';
-        carousel.style.transform = `translateX(${-(currentIndex + 1) * imageWidth}px)`;
+        carousel.style.transform = `translateX(${-imageWidth * (currentIndex + 1)}px)`;
 
-        // Reset de carrouselpositie bij het einde
-        if (currentIndex >= images.length) {
+        // Handle the reset from the last clone back to the first image
+        if (currentIndex === images.length) {
             setTimeout(() => {
                 carousel.style.transition = 'none';
-                carousel.style.transform = `translateX(${-imageWidth}px)`;
                 currentIndex = 0;
-            }, 500);
+                carousel.style.transform = `translateX(${-imageWidth}px)`;
+            }, 500); // Matches the transition duration
         }
     }
 
-    // Scroll naar de vorige afbeelding
+    // Scroll to the previous image
     function scrollPrev() {
+        if (currentIndex <= -1) return; // Prevent over-scrolling
         currentIndex--;
         carousel.style.transition = 'transform 0.5s ease-in-out';
-        carousel.style.transform = `translateX(${-(currentIndex + 1) * imageWidth}px)`;
+        carousel.style.transform = `translateX(${-imageWidth * (currentIndex + 1)}px)`;
 
-        // Reset de carrouselpositie bij het begin
-        if (currentIndex < 0) {
+        // Handle the reset from the first clone back to the last image
+        if (currentIndex === -1) {
             setTimeout(() => {
                 carousel.style.transition = 'none';
-                carousel.style.transform = `translateX(${-(images.length) * imageWidth}px)`;
                 currentIndex = images.length - 1;
-            }, 500);
+                carousel.style.transform = `translateX(${-imageWidth * images.length}px)`;
+            }, 500); // Matches the transition duration
         }
     }
 
-    // Update de positie van de carrousel
-    function updateCarousel() {
-        const offset = -(currentIndex + 1) * imageWidth;
-        carousel.style.transform = `translateX(${offset}px)`;
+    // Auto-scroll
+    let autoScrollInterval = setInterval(scrollNext, 3000);
+
+    // Reset auto-scroll when interacting
+    function resetAutoScroll() {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(scrollNext, 3000);
     }
 
-    // Voeg eventlisteners toe aan de knoppen
+    // Button event listeners
     nextButton.addEventListener('click', () => {
         scrollNext();
         resetAutoScroll();
@@ -134,22 +151,20 @@ function initializeCarousel(carouselContainer) {
         resetAutoScroll();
     });
 
-    // Automatisch scrollen
-    let autoScrollInterval = setInterval(scrollNext, 3000); // Elke 3 seconden
+    // Handle window resizing for responsiveness
+    window.addEventListener('resize', updateImageWidth);
 
-    // Reset de automatische scroll-timer bij handmatige interactie
-    function resetAutoScroll() {
-        clearInterval(autoScrollInterval); // Stop de huidige timer
-        autoScrollInterval = setInterval(scrollNext, 3000); // Start opnieuw
-    }
+    // Update width once on initialization
+    updateImageWidth();
 }
 
-// Initialiseer alle carrousels
+// Initialize all carousels
 document.querySelectorAll('.carousel-container').forEach((carouselContainer) => {
     initializeCarousel(carouselContainer);
 });
 
 </script>
+
     <main>
         <section class="contact-block">
             <div class="text">

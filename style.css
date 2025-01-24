@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-size: large;
     font-family: 'Candara', Arial, sans-serif;
@@ -238,9 +241,9 @@ h3 {
     background-position: center;
 }
 .carousel-section {
-    padding-top: 1%;
-    background-color: #f7f1ed;
-    text-align: center;
+background-color: #f7f1ed;
+text-align: center;
+padding-top: 1%;
 }
 
 .carousel-container {
@@ -267,35 +270,100 @@ h3 {
     margin: 0 auto;
 }
 
-/* Buttons */
+/* Pijlen */
 .carousel-container .carousel-button {
     position: absolute;
-    top: 50%;
+    top: 50%; /* Verticaal centreren */
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay */
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     z-index: 10;
     font-size: 18px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Linker pijl */
 .carousel-container #prev {
-    left: 10px;
+    left: 10px; /* Links van de carousel */
 }
 
+/* Rechter pijl */
 .carousel-container #next {
-    right: 10px;
+    right: 10px; /* Rechts van de carousel */
 }
 
-/* Responsive Adjustments */
+/* Responsief aanpassen */
 @media (max-width: 768px) {
     .carousel img {
         max-height: 200px;
     }
+
+    .carousel-container .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+/*diensten */
+.diensten {
+    background-color: #f7f1ed;
+    margin-top: 5%;
+}
+.diensten-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Space between list and images */
 }
 
+.diensten ul {
+    flex: 1;
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.diensten-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 10px; /* Space between images */
+}
+
+.diensten-img img {
+    width: 100%; /* Adjust as needed */
+    max-width: 200px; /* Optional: Set max width for images */
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+.dienst1{
+    height: 400px; /* Adjust the height as needed */
+    z-index: 1; /* Top layer */
+    right: 2%;
+    top: 2%; 
+}
+.dienst2{
+    height: 400px; /* Adjust the height as needed */
+    z-index: 1; /* Top layer */
+    right: 2%;
+    top: 2%; 
+}
+.dienst3{
+    height: 400px; /* Adjust the height as needed */
+    z-index: 1; /* Top layer */
+    right: 2%;
+    top: 2%; 
+}
 footer {
     text-align: center;
     padding: 10px 0;
