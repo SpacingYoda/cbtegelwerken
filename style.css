@@ -164,13 +164,7 @@ h3 {
     background-color: #f7f1ed; /* Background color */
     text-align: left;
     height: auto;
-<<<<<<< Updated upstream
-    max-width: 100%; /* Use the full viewport width */
-    box-sizing: border-box; /* Include padding in the width */
-    margin: 0; /* Remove any margins */
-=======
     max-width: 100%;
->>>>>>> Stashed changes
 }
 
 /* Style for the text */
