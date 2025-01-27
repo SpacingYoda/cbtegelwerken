@@ -10,6 +10,11 @@ body {
     background-size: cover;
     overflow-x: hidden;
 }
+html, body {
+    margin: 0; /* Remove default browser margins */
+    padding: 0; /* Remove default browser padding */
+    width: 100%; /* Ensure full width */
+}
 
 header {
     background-color: #f7f1ed;
@@ -155,11 +160,13 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 50px;
-    background-color: #f7f1ed; /* Add a background color for contrast */
+    padding: 40px 0; /* Keep top/bottom padding only */
+    background-color: #f7f1ed; /* Background color */
     text-align: left;
     height: auto;
-    max-width: 1200em;
+    max-width: 100%; /* Use the full viewport width */
+    box-sizing: border-box; /* Include padding in the width */
+    margin: 0; /* Remove any margins */
 }
 
 /* Style for the text */
@@ -227,13 +234,6 @@ h3 {
 
 .text {
     padding-left: 5%;
-}
-
-.contact-block {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
 }
 
 .content-block {
@@ -355,14 +355,6 @@ padding-top: 1%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
     height: 400px; /* Fixed height for images */
     position: relative; /* Enable z-index */
-}
-
-.contact-block {
-    position: relative; /* Ensure absolute elements are positioned within this container */
-    max-width: 1200px; /* Limit the total width of the row */
-    margin: 0 auto; /* Center the entire block */
-    display: flex; /* Align the text and images side-by-side */
-    gap: 20px; /* Add space between text and image sections */
 }
 
 .content-block {
