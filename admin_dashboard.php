@@ -33,25 +33,28 @@ $result = $conn->query($sql);
 </head>
 <body>
   <?php include ('header.php'); ?>
-  <h1>Welkom, Admin</h1>
-  <h2>Contactberichten</h2>
-  <table border="1">
-    <tr>
-      <th>Naam</th>
-      <th>Email</th>
-      <th>Telefoonnummer</th>
-      <th>Bericht</th>
-    </tr>
-    <?php
-    if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phone"]. "</td><td>" . $row["message"]. "</td></tr>";
+  <div class="admin-container">
+    <h1>Welkom, Admin</h1>
+    <h2>Contactberichten</h2>
+    <table>
+      <tr>
+        <th>Naam</th>
+        <th>Email</th>
+        <th>Telefoonnummer</th>
+        <th>Bericht</th>
+      </tr>
+      <?php
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          echo "<tr><td>" . htmlspecialchars($row["name"]) . "</td><td>" . htmlspecialchars($row["email"]) . "</td><td>" . htmlspecialchars($row["phone"]) . "</td><td>" . htmlspecialchars($row["message"]) . "</td></tr>";
+        }
+      } else {
+        echo "<tr><td colspan='4' class='no-messages'>Geen berichten</td></tr>";
       }
-    } else {
-      echo "<tr><td colspan='4'>Geen berichten</td></tr>";
-    }
-    $conn->close();
-    ?>
-  </table>
+      $conn->close();
+      ?>
+    </table>
+  </div>
 </body>
 </html>
+<?php include('footer.php'); ?>
