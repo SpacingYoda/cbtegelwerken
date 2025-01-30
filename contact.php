@@ -1,5 +1,9 @@
-<?php include('header.php'); ?>
+<?php session_start();
+$_SESSION['token'] = bin2hex(random_bytes(32)); // Generate a unique token
 
+include('header.php');
+
+?>
 <body>
   <section class="contact-container">
     <h1>Contact Opnemen</h1>
