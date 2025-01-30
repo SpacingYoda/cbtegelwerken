@@ -1,17 +1,22 @@
 <?php
-session_start();
-
-// Check if form was submitted via POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if token exists and matches the session token
-    if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
-        die("Unauthorized access. Please use the form on Contact.php.");
-    }
-
-    // Reset the token to prevent reuse
-    unset($_SESSION['token']);
-
 include ('index.php');
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Check if required fields are filled
+  if (empty($_POST['name']) || empty($_POST['email'])) {
+      // Redirect back to contact.php with an error message if fields are empty
+      header("Location: contact.php?error=empty");
+      exit();
+  }
+} else {
+  // If someone tries to access this page directly, redirect them back
+  header("Location: contact.php"); // Redirect to the contact page
+  exit();
+}
+
+// Optionally unset the access variable after granting access
+unset($_SESSION['access_granted']);
 
 // Verkrijg de gegevens van het formulier
 $name = $_POST['name'];
@@ -39,9 +44,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-  } else {
-    // Redirect users who try to access Contact_form.php directly
-    header("Location: Contact.php");
-    exit();
-}
 ?>
