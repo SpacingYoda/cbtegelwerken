@@ -11,9 +11,9 @@ body {
     overflow-x: hidden;
 }
 html, body {
-    margin: 0; /* Remove default browser margins */
-    padding: 0; /* Remove default browser padding */
-    width: 100%; /* Ensure full width */
+    margin: 0;
+    padding: 0; 
+    width: 100%; 
 }
 
 header {
@@ -36,8 +36,8 @@ nav ul {
     padding: 20px;
     margin: 0;
     display: flex;
-    justify-content: center; /* Centrer de rest van de knoppen */
-    position: relative; /* Hiermee kunnen we de login-knop positioneren */
+    justify-content: center; 
+    position: relative; 
 }
 
 nav ul li {
@@ -46,8 +46,8 @@ nav ul li {
 
 nav ul .login-button {
     position: absolute;
-    right: 0; /* Zorgt ervoor dat de inlogknop aan de rechterkant staat */
-    margin-right: 20px; /* Optioneel: beetje ruimte toevoegen aan de rechterkant */
+    right: 0; 
+    margin-right: 20px; 
 }
 
 nav ul li a {
@@ -90,29 +90,29 @@ h3 {
     padding: 5%;
     background-color: #f7f1ed;
     z-index: 1;
-    margin-top: 20%;
+    margin-top: 5%;
     margin-bottom: 20%;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-
+/*diensten om de home page */
 .dienst {
     background-size: cover;
     background-position: center;
     padding: 20px;
     color: #f7f1ed;
     text-align: center;
-    height: 200px; /* Pas de hoogte aan naar wens */
+    height: 200px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Zorg ervoor dat de overlay binnen de borders blijft */
+    overflow: hidden; 
 }
 .dienst-link {
-    display: block; /* Ensures the entire div is clickable */
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Keeps the text color consistent */
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
 }
 
 .dienst::before {
@@ -122,18 +122,18 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* De kleur en de dekking van de overlay */
+    background: rgba(0, 0, 0, 0.5); 
     z-index: 1;
     transition: background 0.3s ease;
 }
 
 .dienst:hover::before {
-    background: rgba(0, 0, 0, 0); /* Verwijder de filter bij hover */
+    background: rgba(0, 0, 0, 0); 
 }
 
 .dienst h3, .dienst p {
     position: relative;
-    z-index: 2; /* Zorg ervoor dat de tekst boven de overlay verschijnt */
+    z-index: 2; 
     margin: 0;
 }
 
@@ -155,78 +155,78 @@ h3 {
     }
 }
 
-/* Ensure the contact block has some padding */
+/* contact-blok */
 .contact-block {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 0; /* Keep top/bottom padding only */
-    background-color: #f7f1ed; /* Background color */
+    padding: 40px 0; 
+    background-color: #f7f1ed; 
     text-align: left;
     height: auto;
-    max-width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box; 
+    margin: 0; 
 }
 
 /* Style for the text */
 .contact-block .text {
     flex: 1;
-    margin-right: 20px; /* Space between text and images */
-    /* padding-left: 5%; */
+    margin-right: 20px; 
 }
 
 .contact-button {
-    background-color: #AA0456; /* Groene achtergrondkleur */
-    color: #f7f1ed; /* Witte tekstkleur */
-    padding: 15px 32px; /* Padding voor de button */
-    text-align: center; /* Tekst centreren */
-    text-decoration: none; /* Geen onderstreping */
-    display: inline-block; /* Inline-block weergave */
-    font-size: 16px; /* Tekengrootte */
-    margin: 4px 2px; /* Marges rondom de button */
-    cursor: pointer; /* Handcursor bij hover */
-    border: none; /* Geen rand */
-    border-radius: 30px; /* Afgeronde hoeken */
-    transition: background-color 0.3s ease; /* Animatie bij hover */
+    background-color: #AA0456; 
+    color: #f7f1ed; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: #78063f; /* Donkere groene kleur bij hover */
+    background-color: #78063f; 
 }
-
 
 .content-block {
     position: relative;
     flex: 1;
-    height: 500px; /* Adjust this height based on your design */
+    height: 500px; 
 }
 
 .image {
     position: absolute;
     top: 0;
-    width: 50%; /* Adjust width for better fit */
+    width: 50%; 
     background-size: cover;
     background-position: center;
     border-radius: 10px;
 }
 
 .image1 {
-    height: 400px; /* Adjust the height as needed */
-    z-index: 1; /* Top layer */
+    height: 400px; 
+    z-index: 1; 
     right: 2%;
     top: 2%;
 }
 
 .image2 {
-    height: 450px; /* Adjust the height as needed */
-    z-index: 2; /* Middle layer */
-    right: 65%; /* Adjust the right position to create the overlap */
+    height: 450px; 
+    z-index: 2; 
+    right: 65%;
     top: 0%;
 }
 
 .image3 {
-    height: 330px; /* Adjust the height as needed */
-    z-index: 3; /* Bottom layer */
-    right: 30%; /* Adjust the right position to create the overlap */
+    height: 330px; 
+    z-index: 3; 
+    right: 30%; 
     top: 30%;
 }
 
@@ -243,6 +243,7 @@ h3 {
     background-size: cover;
     background-position: center;
 }
+
 /*carousel */
 .carousel-section {
 background-color: #f7f1ed;
@@ -277,9 +278,9 @@ padding-top: 1%;
 /* Pijlen */
 .carousel-container .carousel-button {
     position: absolute;
-    top: 50%; /* Verticaal centreren */
+    top: 50%; 
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Donkere overlay */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -295,15 +296,14 @@ padding-top: 1%;
 
 /* Linker pijl */
 .carousel-container #prev {
-    left: 10px; /* Links van de carousel */
+    left: 10px; 
 }
 
 /* Rechter pijl */
 .carousel-container #next {
-    right: 10px; /* Rechts van de carousel */
+    right: 10px; 
 }
 
-/* Responsief aanpassen */
 @media (max-width: 768px) {
     .carousel img {
         max-height: 200px;
@@ -315,7 +315,8 @@ padding-top: 1%;
         font-size: 16px;
     }
 }
-/* diensten */
+
+/* diensten pagina */
 .diensten {
     background-color: #f7f1ed;
     margin-top: 5%;
@@ -325,12 +326,12 @@ padding-top: 1%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px; /* Space between list and images */
+    gap: 20px; 
 }
 
 .diensten ul {
     flex: 1;
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; 
     padding: 0;
     margin: 0;
     font-size: 18px;
@@ -340,26 +341,26 @@ padding-top: 1%;
 .diensten-img {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Stack images vertically */
-    gap: 10px; /* Space between images */
+    flex-direction: column; 
+    gap: 10px;
 }
 
 .diensten-img div {
     background-size: cover;
     background-position: center;
     width: 100%;
-    max-width: 300px; /* Set max width */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-    height: 400px; /* Fixed height for images */
-    position: relative; /* Enable z-index */
+    max-width: 300px; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    position: relative;
 }
 
 .content-block {
-    flex: 1; /* Allow the image block to take up the remaining space */
+    flex: 1;
     display: flex;
-    flex-direction: column; /* Stack images vertically */
-    gap: 10px; /* Space between the images */
+    flex-direction: column;
+    gap: 10px;
 }
 
 .voorbeeld {
@@ -371,7 +372,7 @@ padding-top: 1%;
 
 .dienst1 {
     height: 400px;
-    width: 50%; /* Keep the image width consistent */
+    width: 50%;
     z-index: 2;
     right: 5%;
     top: 30%;
@@ -379,7 +380,7 @@ padding-top: 1%;
 
 .dienst2 {
     height: 450px;
-    width: 50%; /* Matches width of .dienst1 */
+    width: 50%;
     z-index: 1;
     right: 48%;
     top: 0%;
@@ -391,6 +392,199 @@ padding-top: 1%;
     margin-top: 20%;
     padding: 2%;
     padding-bottom: 10px;
+}
+/* Contact pagina */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #AA0456;
+}
+
+.contact-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* Formulier styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #78063f;
+    box-shadow: 0 0 5px rgba(255, 0, 242, 0.5);
+}
+
+/* button */
+.submit-btn {
+    background-color: #AA0456;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #78063f;
+}
+.admin-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    color: #AA0456;
+    text-align: center;
+  }
+
+  h2 {
+    color: #78063f;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+
+  th {
+    background-color: #AA0456;
+    color: white;
+    padding: 10px;
+  }
+
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .no-messages {
+    text-align: center;
+    font-size: 1.2em;
+    color: #999;
+  }
+  /* Login pagina */
+.login-container {
+    max-width: 400px; 
+    margin: 100px auto; 
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #AA0456;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Formulier stijl */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #78063f;
+    box-shadow: 0 0 5px rgba(255, 0, 242, 0.5);
+}
+
+/* Login button */
+.submit-btn {
+    background-color: #AA0456;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #78063f;
 }
 
 footer {
