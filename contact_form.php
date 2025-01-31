@@ -34,11 +34,8 @@ if ($conn->query($sql) === TRUE) {
               title: 'Dank u!',
               text: 'Uw informatie is vertuurd!',
               icon: 'success',
-<<<<<<< HEAD
-=======
               confirmButtonColor: '#78063f',
               background: '#f7f1ed',
->>>>>>> origin/main
           }).then(() => {
               window.location.href = 'home.php'; // Redirect after clicking OK
           });
