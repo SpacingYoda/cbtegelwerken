@@ -1,5 +1,7 @@
-<?php include('header.php'); ?>
+<?php session_start();
 
+include('header.php');
+?>
 <body>
   <section class="contact-container">
     <h1>Contact Opnemen</h1>
