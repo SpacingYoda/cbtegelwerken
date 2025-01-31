@@ -33,7 +33,7 @@ if ($conn->query($sql) === TRUE) {
           Swal.fire({
               title: 'Dank u!',
               text: 'Uw informatie is vertuurd!',
-              icon: 'success'
+              icon: 'success',
           }).then(() => {
               window.location.href = 'home.php'; // Redirect after clicking OK
           });

@@ -16,7 +16,7 @@ html, body {
     width: 100%; 
 }
 
-header {
+nav {
     background-color: #f7f1ed;
     color: #fff;
     padding: 10px 0;
@@ -54,13 +54,15 @@ nav ul li a {
     color: #AA0456;
     text-decoration: none;
     padding: 10px;
+    border-radius: 5px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active { /* Voeg de .active klasse toe */
     color: #78063f;
     border-radius: 5px;
-}   
-
+    text-shadow: 2px 2px 5px rgba(92, 16, 52, 0.155);;
+}
 h2 {
     font-size: 36px; 
     font-weight: bold;
@@ -596,4 +598,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
