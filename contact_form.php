@@ -33,7 +33,9 @@ if ($conn->query($sql) === TRUE) {
           Swal.fire({
               title: 'Dank u!',
               text: 'Uw informatie is vertuurd!',
-              icon: 'success'
+              icon: 'success',
+              confirmButtonColor: '#78063f',
+              background: '#f7f1ed',
           }).then(() => {
               window.location.href = 'home.php'; // Redirect after clicking OK
           });
